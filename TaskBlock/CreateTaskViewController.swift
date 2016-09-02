@@ -111,21 +111,24 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func savePlaces(){
-    }
     @IBAction func SaveButtonTapped(sender: AnyObject) {
         //call createTaskBlock
         let newTask = createTaskBlock(blockShapeButtonString!)
+        
         if var array = NSUserDefaults.standardUserDefaults().arrayForKey("tasks") {
             array.append(newTask!)
+            
             let encodedData = NSKeyedArchiver.archivedDataWithRootObject(array)
+            
             NSUserDefaults.standardUserDefaults().setObject(encodedData, forKey: "tasks")
             
         }
         else{
-            
+        
             let array: [AnyObject] = [newTask!]
+            print(array)
             let encodedData = NSKeyedArchiver.archivedDataWithRootObject(array)
+            print(encodedData)
             NSUserDefaults.standardUserDefaults().setObject(encodedData, forKey: "tasks")
 
         }
