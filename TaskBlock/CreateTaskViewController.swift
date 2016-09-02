@@ -26,21 +26,21 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var priorityTextField: UITextField! {
         didSet {
             priorityInput = priorityTextField.text
-            print(priorityInput)
+           // print(priorityInput)
         }
     }
     
     @IBOutlet weak var difficultyTextField: UITextField!{
         didSet {
             difficultyInput = difficultyTextField.text
-            print(difficultyInput)
+           // print(difficultyInput)
         }
     }
     
     @IBOutlet weak var deadlineTextField: UITextField!{
         didSet {
             deadlineInput = deadlineTextField.text
-            print(deadlineInput)
+          //  print(deadlineInput)
         }
     }
     
@@ -83,6 +83,11 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate {
     }
 
     func createTaskBlock(taskShape:String) -> AnyObject?{
+        taskDescriptionInput = descriptionTextField.text
+        priorityInput = priorityTextField.text
+        difficultyInput = difficultyTextField.text
+        deadlineInput   = deadlineTextField.text 
+        
         switch taskShape {
             case "Circle":
             let task = CircleTask(taskDescription:taskDescriptionInput!, priority: Int(priorityInput!)!, difficulty: Int(difficultyInput!)!, deadline: deadlineInput!)
@@ -115,8 +120,10 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate {
             array.append(newTask!)
             let encodedData = NSKeyedArchiver.archivedDataWithRootObject(array)
             NSUserDefaults.standardUserDefaults().setObject(encodedData, forKey: "tasks")
+            
         }
         else{
+            
             let array: [AnyObject] = [newTask!]
             let encodedData = NSKeyedArchiver.archivedDataWithRootObject(array)
             NSUserDefaults.standardUserDefaults().setObject(encodedData, forKey: "tasks")
