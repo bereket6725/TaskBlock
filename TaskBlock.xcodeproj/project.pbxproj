@@ -18,6 +18,7 @@
 		E399C1801D79DE500061569A /* CircleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399C17F1D79DE500061569A /* CircleTask.swift */; };
 		E399C1821D79DE5E0061569A /* TriangleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399C1811D79DE5E0061569A /* TriangleTask.swift */; };
 		E399C1841D79DE790061569A /* RectangleTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399C1831D79DE790061569A /* RectangleTask.swift */; };
+		E399C1871D79F0E00061569A /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E399C1861D79F0E00061569A /* CreateTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E399C17F1D79DE500061569A /* CircleTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleTask.swift; sourceTree = "<group>"; };
 		E399C1811D79DE5E0061569A /* TriangleTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleTask.swift; sourceTree = "<group>"; };
 		E399C1831D79DE790061569A /* RectangleTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleTask.swift; sourceTree = "<group>"; };
+		E399C1861D79F0E00061569A /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				E399C15A1D79DE150061569A /* AppDelegate.swift */,
 				E399C15C1D79DE150061569A /* ViewController.swift */,
+				E399C1861D79F0E00061569A /* CreateTaskViewController.swift */,
 				E399C1851D79DE800061569A /* Model */,
 				E399C15E1D79DE150061569A /* Main.storyboard */,
 				E399C1641D79DE150061569A /* Assets.xcassets */,
@@ -227,6 +230,7 @@
 				E399C15D1D79DE150061569A /* ViewController.swift in Sources */,
 				E399C15B1D79DE150061569A /* AppDelegate.swift in Sources */,
 				E399C17E1D79DE3F0061569A /* SquareTask.swift in Sources */,
+				E399C1871D79F0E00061569A /* CreateTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +422,7 @@
 				E399C1791D79DE160061569A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E399C17A1D79DE160061569A /* Build configuration list for PBXNativeTarget "TaskBlockTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +431,7 @@
 				E399C17C1D79DE160061569A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

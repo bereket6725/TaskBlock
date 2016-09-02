@@ -8,3 +8,18 @@
 
 import Foundation
 import UIKit
+
+
+
+
+class SquareTask: UIView {
+    
+    let taskDescription: String
+    let priority:Int
+    let difficulty: Int
+    let deadline: String
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

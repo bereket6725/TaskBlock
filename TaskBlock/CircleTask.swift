@@ -8,3 +8,15 @@
 
 import Foundation
 import UIKit
+
+
+
+
+class CircleTask {
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
