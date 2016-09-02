@@ -199,10 +199,16 @@
                             <constraint firstItem="JeL-zd-RHJ" firstAttribute="leading" secondItem="vNs-IC-5Ri" secondAttribute="leading" id="xjO-Ci-g6g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="deadlineTextField" destination="4Tn-q4-IOd" id="VPA-CR-5s8"/>
+                        <outlet property="descriptionTextField" destination="beL-Wn-t1v" id="hQH-NA-mts"/>
+                        <outlet property="difficultyTextField" destination="iiK-Iy-OAn" id="rv3-CW-Ivd"/>
+                        <outlet property="priorityTextField" destination="ac9-f6-PQh" id="Wmp-z8-ouV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3YZ-RD-F22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968" y="249"/>
+            <point key="canvasLocation" x="2148" y="269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YzJ-lG-0YC">

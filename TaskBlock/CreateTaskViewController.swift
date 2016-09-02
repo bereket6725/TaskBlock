@@ -8,7 +8,16 @@
 
 import UIKit
 
-class CreateTaskViewController: UIViewController {
+class CreateTaskViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    @IBOutlet weak var priorityTextField: UITextField!
+    
+    @IBOutlet weak var difficultyTextField: UITextField!
+    
+    @IBOutlet weak var deadlineTextField: UITextField!
+    
     
     
     override func viewDidLoad(){
