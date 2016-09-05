@@ -23,14 +23,11 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     var delegate: CreateTaskViewControllerDelegate?
     //var data: TaskStruct?
-    
     var pickerDataSource = [["Priority","Yellow","Orange","Red"],["Difficulty","1","2","3"]]
     var taskDescriptionInput: String?
     var blockShapeButtonString: String?
 
-    
     @IBOutlet weak var taskPicker: UIPickerView!
-    
     @IBOutlet weak var deadlineTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!{
         didSet {
@@ -70,43 +67,36 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     //------------------------------------------------------------------------------------
 
     @IBAction func createTaskButtonTapped(sender: AnyObject) {
-        
         if descriptionTextField.text != "" && deadlineTextField.text != "" {
-            
             if pickerDataSource[0][taskPicker.selectedRowInComponent(0)] != "Priority" && pickerDataSource[1][taskPicker.selectedRowInComponent(1)] != "Difficulty"{
                 
                 self.dismissViewControllerAnimated(true, completion: nil)
-
+                
             }
             else{
                presentAlert()
                 
             }
         }
-        
-
+        else{
+            presentAlert()
+        }
     }
     
     func presentAlert(){
-        
         let alertController = UIAlertController(title: "Invalid", message: "please type in a valid task", preferredStyle: .Alert)
-    
         let OkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(OkAction)
         self.presentViewController(alertController, animated: true, completion: nil)
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
     }
   
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
     }
-    
-       
     
     override func shouldAutorotate() -> Bool {
         return false
