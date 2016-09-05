@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TaskView: UIView {
+class TaskView: UIView, UIGestureRecognizerDelegate {
     
     var task: TaskStruct?
         
@@ -34,8 +34,14 @@ class TaskView: UIView {
                 self.backgroundColor = UIColor.purpleColor()
             default:
                 self.backgroundColor = UIColor.grayColor()
+            
+            
         }
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.delegate = self
+        self.userInteractionEnabled = true
+        self.addGestureRecognizer(tap)
+    
     }
 
     
