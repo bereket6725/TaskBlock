@@ -79,12 +79,7 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
 
             }
             else{
-                
-                let alertController = UIAlertController(title: "Invalid", message: "please type in a valid task", preferredStyle: .Alert)
-                
-                let OkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alertController.addAction(OkAction)
-                self.presentViewController(alertController, animated: true, completion: nil)
+               presentAlert()
                 
             }
         }
@@ -92,6 +87,15 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
 
     }
     
+    func presentAlert(){
+        
+        let alertController = UIAlertController(title: "Invalid", message: "please type in a valid task", preferredStyle: .Alert)
+    
+        let OkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(OkAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
