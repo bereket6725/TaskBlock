@@ -31,6 +31,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,6 +137,7 @@
                             <constraint firstItem="52b-JJ-pG0" firstAttribute="top" secondItem="IvO-0D-4bM" secondAttribute="bottom" id="lNq-aj-cnU"/>
                         </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="deadlineTextField" destination="WIL-ok-PhS" id="iLW-1m-AFa"/>
                         <outlet property="descriptionTextField" destination="Z11-x7-aBY" id="1hT-K0-VHf"/>

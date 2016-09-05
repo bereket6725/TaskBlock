@@ -40,7 +40,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         
      //   self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: nil)
 //        blueBlock.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
@@ -98,12 +98,19 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         ctvc.delegate = self 
         self.presentViewController(ctvc, animated: true, completion: nil)
     }
+  
+    
     override func shouldAutorotate() -> Bool {
         return false
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        // Only allow Portrait
+        return UIInterfaceOrientation.Portrait
     }
 
     
