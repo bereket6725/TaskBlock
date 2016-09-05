@@ -39,6 +39,9 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
      //   self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: nil)
         blueBlock.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
         blueBlock.backgroundColor = UIColor.blueColor()
@@ -89,10 +92,11 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     }
     
     @IBAction func AddTaskButtonTapped(sender: AnyObject) {
-      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as UIViewController
+//      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as UIViewController
         
-       self.presentViewController(viewController, animated: true, completion: nil)
-        
+        let ctvc = storyboard?.instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as! CreateTaskViewController
+        ctvc.delegate = self 
+        self.presentViewController(ctvc, animated: true, completion: nil)
     }
     override func shouldAutorotate() -> Bool {
         return false

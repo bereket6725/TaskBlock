@@ -13,12 +13,6 @@ protocol CreateTaskViewControllerDelegate{
     func acceptData(data: TaskStruct!)
 }
 
-enum color{
-    case Yellow
-    case Orange
-    case Red
-}
-
 class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
     var delegate: CreateTaskViewControllerDelegate?
