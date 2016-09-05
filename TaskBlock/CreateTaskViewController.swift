@@ -16,7 +16,7 @@ protocol CreateTaskViewControllerDelegate{
 class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
     var delegate: CreateTaskViewControllerDelegate?
-    var data: TaskStruct!
+    //var data: TaskStruct?
     
     var pickerDataSource = [["Priority","1","2","3"],["Difficulty","1","2","3"],["Color","Red","Blue","yellow"],["Shape TBD","Square","Circle","Triangle"]]
     var taskDescriptionInput: String?
@@ -64,17 +64,27 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     //------------------------------------------------------------------------------------
 
     @IBAction func createTaskButtonTapped(sender: AnyObject) {
-        if descriptionTextField.text != "" && deadlineTextField.text != "" {
+        if descriptionTextField.text == "" && deadlineTextField.text == ""{
+            if taskPicker.selectedRowInComponent(0) == "Priority" && taskPicker.selectedRowInComponent(1) == "Difficulty"{
+                
+            var priority = taskPicker.selectedRowInComponent(0)
+            var difficulty = taskPicker.selectedRowInComponent(1)
+            var color = taskPicker.selectedRowInComponent(2)
+            var taskDescription = descriptionTextField.text
+            var deadline = deadlineTextField.text
+            
+            var newTask = TaskStruct(taskDescription: taskDescription!, deadline:deadline!, priority: priority, difficulty: difficulty, color: color)
+            }
         }
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.delegate?.acceptData(<#T##data: TaskStruct!##TaskStruct!#>)
+
     }
     
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-            if self.isBeingDismissed(){
-                
-        }
+        
     }
   
     override func viewDidDisappear(animated: Bool) {
