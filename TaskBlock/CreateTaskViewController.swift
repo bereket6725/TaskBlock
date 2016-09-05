@@ -17,7 +17,7 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     var delegate: CreateTaskViewControllerDelegate?
     //var data: TaskStruct?
-    var pickerDataSource = [["Priority","Yellow","Orange","Red"],["Difficulty","1","2","3"]]
+    var pickerDataSource = [["Priority","Green","Yellow","Purple","Orange","Red"],["Difficulty","1","2","3","4","5"]]
     var taskDescriptionInput: String?
     var blockShapeButtonString: String?
 

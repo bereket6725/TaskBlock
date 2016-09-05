@@ -17,7 +17,7 @@ class TaskView: UIView {
         self.task = myTask
         let convertedDifficulty = Int((self.task?.difficulty)!)
        // let convertedPriority = Int((self.task?.priority)!)
-        super.init(frame: CGRect(x:0, y:0, width: convertedDifficulty!*75, height:convertedDifficulty!*75))
+        super.init(frame: CGRect(x:0, y:0, width: convertedDifficulty!*40, height:convertedDifficulty!*40))
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 3.0
         
@@ -28,6 +28,10 @@ class TaskView: UIView {
                 self.backgroundColor = UIColor.orangeColor()
             case "Red":
                 self.backgroundColor = UIColor.redColor()
+            case "Green":
+                self.backgroundColor = UIColor.greenColor()
+            case "Purple":
+                self.backgroundColor = UIColor.purpleColor()
             default:
                 self.backgroundColor = UIColor.grayColor()
         }

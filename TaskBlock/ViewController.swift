@@ -43,14 +43,14 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         
         
      //   self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: nil)
-        blueBlock.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        blueBlock.backgroundColor = UIColor.blueColor()
-        blueBlock.layer.borderColor = UIColor.blackColor().CGColor
-        blueBlock.layer.borderWidth = 3.0
-        view.addSubview(blueBlock)
-        
-        collision.addItem(blueBlock)
-        gravity.addItem(blueBlock)
+//        blueBlock.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+//        blueBlock.backgroundColor = UIColor.blueColor()
+//        blueBlock.layer.borderColor = UIColor.blackColor().CGColor
+//        blueBlock.layer.borderWidth = 3.0
+//        view.addSubview(blueBlock)
+//        
+//        collision.addItem(blueBlock)
+//        gravity.addItem(blueBlock)
         
         motionManager.startDeviceMotionUpdatesToQueue(motionQueue, withHandler: {
             motion, error in
