@@ -12,13 +12,19 @@ import UIKit
 protocol CreateTaskViewControllerDelegate{
     func acceptData(data: TaskStruct!)
 }
- 
+
+enum color{
+    case Yellow
+    case Orange
+    case Red
+}
+
 class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     
     var delegate: CreateTaskViewControllerDelegate?
     //var data: TaskStruct?
     
-    var pickerDataSource = [["Priority","1","2","3"],["Difficulty","1","2","3"],["Color","Red","Blue","yellow"],["Shape TBD","Square","Circle","Triangle"]]
+    var pickerDataSource = [["Priority","Yellow","Orange","Red"],["Difficulty","1","2","3"]]
     var taskDescriptionInput: String?
     var blockShapeButtonString: String?
 
@@ -43,11 +49,11 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     
     //PickerViewDataSource and Delegate Methods-------------------------------------------
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 3
+        return 2
         
     }
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource.count
+        return pickerDataSource[component].count
         
         
     }
@@ -64,20 +70,25 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     //------------------------------------------------------------------------------------
 
     @IBAction func createTaskButtonTapped(sender: AnyObject) {
-        if descriptionTextField.text == "" && deadlineTextField.text == ""{
-            if taskPicker.selectedRowInComponent(0) == "Priority" && taskPicker.selectedRowInComponent(1) == "Difficulty"{
-                
-            var priority = taskPicker.selectedRowInComponent(0)
-            var difficulty = taskPicker.selectedRowInComponent(1)
-            var color = taskPicker.selectedRowInComponent(2)
-            var taskDescription = descriptionTextField.text
-            var deadline = deadlineTextField.text
+        
+        if descriptionTextField.text != "" && deadlineTextField.text != "" {
             
-            var newTask = TaskStruct(taskDescription: taskDescription!, deadline:deadline!, priority: priority, difficulty: difficulty, color: color)
+            if pickerDataSource[0][taskPicker.selectedRowInComponent(0)] != "Priority" && pickerDataSource[1][taskPicker.selectedRowInComponent(1)] != "Difficulty"{
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+
+            }
+            else{
+                
+                let alertController = UIAlertController(title: "Invalid", message: "please type in a valid task", preferredStyle: .Alert)
+                
+                let OkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(OkAction)
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
             }
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
-        self.delegate?.acceptData(<#T##data: TaskStruct!##TaskStruct!#>)
+        
 
     }
     
