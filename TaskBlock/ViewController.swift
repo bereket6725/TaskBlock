@@ -9,12 +9,13 @@
 import UIKit
 import CoreMotion
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     
     let motionManager = CMMotionManager()
     let motionQueue = NSOperationQueue()
     
     // let task = TriangleTask()
+    let blueBlock = UIView()
     
     lazy var animator: UIDynamicAnimator = {
         let a = UIDynamicAnimator(referenceView: self.view)
@@ -34,30 +35,20 @@ class ViewController: UIViewController {
         return c
     }()
     
+    var createdTask: TaskStruct? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addTask))
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey("tasks") as? NSData{
-            let tasksArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [UIView]
-            releaseTheTasks(tasksArray!)
-        }
-        else{
-            print("yo we got an error")
-        }
+     //   self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: nil)
+        blueBlock.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
+        blueBlock.backgroundColor = UIColor.blueColor()
+        blueBlock.layer.borderColor = UIColor.blackColor().CGColor
+        blueBlock.layer.borderWidth = 3.0
+        view.addSubview(blueBlock)
         
+        collision.addItem(blueBlock)
+        gravity.addItem(blueBlock)
         
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    
-    func releaseTheTasks(array:[UIView]){
-        for task in array{
-            view.addSubview(task)
-            collision.addItem(task)
-            gravity.addItem(task)
-            
-        }
         motionManager.startDeviceMotionUpdatesToQueue(motionQueue, withHandler: {
             motion, error in
             
@@ -75,19 +66,29 @@ class ViewController: UIViewController {
             
         })
         
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
-  
-
-    func addTask(){
-        
-        let vc:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as! CreateTaskViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-        //self.presentViewController(vc, animated: true, completion: nil)
-        // presentViewController(vc, animated: true, completion: nil)
+    
+    func acceptData(data: TaskStruct!) {
+        self.createdTask = data
+        createTaskView(self.createdTask!)
+    }
+    
+    func createTaskView(Task: TaskStruct){
+        let newTaskView = TaskView(myTask: Task)
+        view.addSubview(newTaskView)
+        collision.addItem(newTaskView)
+        gravity.addItem(newTaskView)
         
     }
     
+    @IBAction func AddTaskButtonTapped(sender: AnyObject) {
+      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as UIViewController
+        
+       self.presentViewController(viewController, animated: true, completion: nil)
+        
+    }
     override func shouldAutorotate() -> Bool {
         return false
     }
