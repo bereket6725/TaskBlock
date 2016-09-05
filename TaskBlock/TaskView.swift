@@ -18,6 +18,9 @@ class TaskView: UIView {
         let convertedDifficulty = Int((self.task?.difficulty)!)
         let convertedPriority = Int((self.task?.priority)!)
         super.init(frame: CGRect(x:0, y:0, width: convertedDifficulty!*75, height:convertedPriority!*75))
+        self.layer.borderColor = UIColor.blackColor().CGColor
+        self.layer.borderWidth = 3.0
+        
     }
 
     

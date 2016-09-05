@@ -71,12 +71,17 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     
     
     func acceptData(data: TaskStruct!) {
+        
         self.createdTask = data
+        
         createTaskView(self.createdTask!)
+        
     }
     
     func createTaskView(Task: TaskStruct){
+        
         let newTaskView = TaskView(myTask: Task)
+        
         view.addSubview(newTaskView)
         collision.addItem(newTaskView)
         gravity.addItem(newTaskView)

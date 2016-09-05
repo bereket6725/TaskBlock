@@ -17,6 +17,5 @@ struct TaskStruct{
     let deadline: String
     let priority: String
     let difficulty: String
-    let color: String
     
 }

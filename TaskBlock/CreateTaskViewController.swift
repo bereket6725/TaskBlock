@@ -70,8 +70,7 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
         if descriptionTextField.text != "" && deadlineTextField.text != "" {
             if pickerDataSource[0][taskPicker.selectedRowInComponent(0)] != "Priority" && pickerDataSource[1][taskPicker.selectedRowInComponent(1)] != "Difficulty"{
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
-                
+                createTaskStruct()
             }
             else{
                presentAlert()
@@ -83,6 +82,25 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
         }
     }
     
+    
+    func createTaskStruct(){
+        let taskDetail = descriptionTextField.text
+        let taskDeadline = deadlineTextField.text
+        let priority = pickerDataSource[0][taskPicker.selectedRowInComponent(0)]
+        let difficulty = pickerDataSource[1][taskPicker.selectedRowInComponent(1)]
+        
+        let newTask = TaskStruct(taskDescription: taskDetail!, deadline: taskDeadline!, priority: priority, difficulty: difficulty)
+        
+        passDataAndDissmiss(newTask)
+    }
+    
+    func passDataAndDissmiss(task: TaskStruct){
+        self.delegate?.acceptData(task)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
     func presentAlert(){
         let alertController = UIAlertController(title: "Invalid", message: "please type in a valid task", preferredStyle: .Alert)
         let OkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -90,6 +108,11 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+
+    }
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
     }
