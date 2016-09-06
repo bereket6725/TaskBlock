@@ -37,7 +37,7 @@ class TaskView: UIView, UIGestureRecognizerDelegate {
             
             
         }
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         tap.delegate = self
         self.userInteractionEnabled = true
         self.addGestureRecognizer(tap)

@@ -13,7 +13,11 @@ import UIKit
 
 extension TaskView {
     
-    func handleTap(){
+    func handleTap(sender: UITapGestureRecognizer){
+        
+        if sender.state == .Ended {
+
+        }
     }
     
     

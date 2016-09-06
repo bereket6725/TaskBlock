@@ -107,13 +107,6 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
         super.touchesBegan(touches, withEvent: event)
 
     }
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-  
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
     
     override func shouldAutorotate() -> Bool {
         return false
@@ -122,4 +115,6 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
+    
+
 }
