@@ -102,7 +102,7 @@ class CreateTaskViewController: UIViewController, UITextFieldDelegate, UIPickerV
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+       override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
 

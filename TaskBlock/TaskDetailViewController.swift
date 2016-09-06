@@ -22,6 +22,9 @@ class TaskDetailViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.clearColor()
+        view.opaque = false
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -29,6 +32,10 @@ class TaskDetailViewController: UIViewController, UITextViewDelegate {
     }
     
     
+    @IBAction func dismissButtonTapped(sender: AnyObject) {
+        
+    self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     
 }

@@ -11,6 +11,7 @@ import CoreMotion
 
 class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     
+    
     let motionManager = CMMotionManager()
     let motionQueue = NSOperationQueue()
     
@@ -67,7 +68,6 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     func acceptData(data: TaskStruct!) {
         
         self.createdTask = data
-        
         createTaskView(self.createdTask!)
         
     }
@@ -77,10 +77,26 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         let newTaskView = TaskView(myTask: Task)
         
         view.addSubview(newTaskView)
+//        let button = UIButton(frame:newTaskView.bounds)
+//        
+//        button.titleLabel?.text = ""
+//        button.addTarget(self, action: #selector(ViewController.buttonAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+//        
+//        newTaskView.addSubview(button)
         collision.addItem(newTaskView)
         gravity.addItem(newTaskView)
         
+
     }
+    
+//    func buttonAction(sender: UIButton!){
+//        
+//        if sender.touchInside == true {
+//           let vc = storyboard?.instantiateViewControllerWithIdentifier("TaskDetailIdentifier")
+//           self.presentViewController(vc!, animated: true, completion: nil)
+//            
+//        }
+//    }
     
     @IBAction func AddTaskButtonTapped(sender: AnyObject) {
 //      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as UIViewController
@@ -104,6 +120,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         return UIInterfaceOrientation.Portrait
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
