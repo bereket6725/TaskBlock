@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3039CE21D7E1FFF00D3B5D6 /* TaskViewGestureExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3039CE11D7E1FFF00D3B5D6 /* TaskViewGestureExtenstion.swift */; };
 		E329DF221D7CC8C700C1872E /* TaskStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E329DF211D7CC8C700C1872E /* TaskStruct.swift */; };
 		E329DF621D7D156000C1872E /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E329DF611D7D156000C1872E /* TaskView.swift */; };
 		E37F0B711D7E53BB004987FD /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F0B701D7E53BB004987FD /* TaskDetailViewController.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E3039CE11D7E1FFF00D3B5D6 /* TaskViewGestureExtenstion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewGestureExtenstion.swift; sourceTree = "<group>"; };
 		E329DF211D7CC8C700C1872E /* TaskStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStruct.swift; sourceTree = "<group>"; };
 		E329DF611D7D156000C1872E /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		E37F0B701D7E53BB004987FD /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				E399C1861D79F0E00061569A /* CreateTaskViewController.swift */,
 				E37F0B701D7E53BB004987FD /* TaskDetailViewController.swift */,
 				E329DF611D7D156000C1872E /* TaskView.swift */,
-				E3039CE11D7E1FFF00D3B5D6 /* TaskViewGestureExtenstion.swift */,
 				E329DF211D7CC8C700C1872E /* TaskStruct.swift */,
 				E399C15E1D79DE150061569A /* Main.storyboard */,
 				E399C1641D79DE150061569A /* Assets.xcassets */,
@@ -217,7 +214,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E399C1631D79DE150061569A /* TaskBlock.xcdatamodeld in Sources */,
-				E3039CE21D7E1FFF00D3B5D6 /* TaskViewGestureExtenstion.swift in Sources */,
 				E399C15D1D79DE150061569A /* ViewController.swift in Sources */,
 				E329DF221D7CC8C700C1872E /* TaskStruct.swift in Sources */,
 				E329DF621D7D156000C1872E /* TaskView.swift in Sources */,

@@ -15,7 +15,6 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
     let motionManager = CMMotionManager()
     let motionQueue = NSOperationQueue()
     
-    // let task = TriangleTask()
     let blueBlock = UIView()
     
     lazy var animator: UIDynamicAnimator = {
@@ -64,7 +63,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
+    //Struct is passed via delegation so a taskview can be made
     func acceptData(data: TaskStruct!) {
         
         self.createdTask = data
@@ -72,6 +71,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         
     }
     
+    //creates a task
     func createTaskView(Task: TaskStruct){
         
         let newTaskView = TaskView(myTask: Task)
@@ -98,6 +98,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
 //        }
 //    }
     
+    //presents viewController that makes a task
     @IBAction func AddTaskButtonTapped(sender: AnyObject) {
 //      let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CreateTaskIdentifier") as UIViewController
         
@@ -106,7 +107,7 @@ class ViewController: UIViewController, CreateTaskViewControllerDelegate {
         self.presentViewController(ctvc, animated: true, completion: nil)
     }
   
-    
+
     override func shouldAutorotate() -> Bool {
         return false
     }
